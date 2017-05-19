@@ -2,7 +2,7 @@
     "name": "conceptho/yii2-service-layer",
     "description": "Yii2 Service Layer",
     "type": "yii2-extension",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "authors": [
         {
