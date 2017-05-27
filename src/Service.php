@@ -77,6 +77,18 @@ class Service extends \yii\base\Component
         return true;
     }
 
+    protected function linkModels($model, $relation, $models)
+    {
+        $modelsToUnlink = array_udiff($model->$relation, $models, function($a, $b) { return $a->id <=> $b->id; });
+        $modelsTolink = array_udiff($models, $model->$relation, function($a, $b) { return $a->id <=> $b->id; });
+
+        foreach($modelsToUnlink as $m)
+            $model->unlink($relation, $m);
+
+        foreach($modelsTolink as $m)
+            $model->link($relation, $m);
+    }
+
     protected function checkResponse(Response $res, $dataOnError = array())
     {
         if (!$res->isOk) {
