@@ -41,7 +41,7 @@ class Component extends \yii\base\Component
             }
             catch(\Exception $e)
             {
-                Yii::log("Service $name isn't allowed");
+                Yii::warning("Service $name isn't allowed");
                 return false;
             }
         }
