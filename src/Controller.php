@@ -100,10 +100,10 @@ class Controller extends \yii\web\Controller {
 
 
 		if ($response->isOk) {
-			Yii::$app->session->setFlash('success', $response['message'] ? $response['message'] : 'Successful operation');
+			Yii::$app->session->setFlash('success', $response['message'] ? $response['message'] : Yii::t('yii2-service-layer','Successful operation'));
 			return call_user_func($success, $response, $model, $this);
 		} else {
-			Yii::$app->session->setFlash('danger', $response['message'] ? $response['message'] : 'Could not perform operation');
+			Yii::$app->session->setFlash('danger', $response['message'] ? $response['message'] : Yii::t('yii2-service-layer','Could not perform operation'));
 			return call_user_func($fail, $response, $model, $this);
 		}
 	}
