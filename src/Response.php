@@ -2,7 +2,7 @@
 
 namespace conceptho\ServiceLayer;
 
-class Response extends \yii\base\Object implements \IteratorAggregate, \ArrayAccess, \Countable {
+class Response extends \yii\base\BaseObject implements \IteratorAggregate, \ArrayAccess, \Countable {
 	use \yii\base\ArrayAccessTrait;
 
 	public $isOk;

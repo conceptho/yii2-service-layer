@@ -32,7 +32,7 @@ class Controller extends \yii\web\Controller {
 
 	protected function createModels($model, $data)
 	{
-		if($model instanceof \yii\base\Object)
+		if($model instanceof \yii\base\BaseObject)
 		{
 			$model = $model->className();
 		}
